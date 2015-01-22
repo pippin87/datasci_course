@@ -1,0 +1,3 @@
+SELECT * 
+FROM frequency GROUP BY docid
+HAVING term='transactions';

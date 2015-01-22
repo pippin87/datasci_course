@@ -1,0 +1,11 @@
+SELECT count(*) FROM(
+	SELECT * 
+	FROM frequency GROUP BY docid 
+	HAVING term="transactions" AND term="world"
+) x;
+
+
+
+
+
+

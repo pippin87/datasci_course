@@ -1,0 +1,13 @@
+SELECT bid, sim FROM(
+	SELECT a.docid as aid, b.docid as bid, sum(a.count*b.count) as sim
+	FROM(	
+		SELECT 'q' AS docid, 'washington' as term, 1 as count
+		UNION
+		SELECT 'q' as docid, 'taxes' as term, 1 as count
+		UNION
+		SELECT 'q' as docid, 'treasury' as term, 1 as count
+	) a, frequency b
+	WHERE a.term=b.term
+	GROUP BY a.docid, b.docid
+)
+WHERE aid='q' AND sim>5;

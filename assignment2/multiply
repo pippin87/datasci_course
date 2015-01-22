@@ -1,0 +1,7 @@
+SELECT sum(val) FROM(
+	SELECT a.row_num AS row, b.col_num AS col, a.value*b.value AS val
+	FROM A a, B b
+	WHERE a.col_num=b.row_num
+)
+WHERE row=2 AND col=3;
+

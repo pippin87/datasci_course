@@ -1,0 +1,6 @@
+SELECT sum(val) FROM(
+	SELECT a.docid AS aid, b.docid AS bid, a.count*b.count AS val
+	FROM frequency a, frequency b
+	WHERE a.term=b.term
+)
+WHERE aid='10080_txt_crude' AND bid='17035_txt_earn';

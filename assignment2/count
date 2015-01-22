@@ -1,0 +1,5 @@
+SELECT count(*) FROM(
+	SELECT DISTINCT*
+	FROM frequency
+	WHERE term="parliament"
+) x;
